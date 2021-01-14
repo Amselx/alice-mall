@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.userdetails.UserDetailsByNameServiceWrapper;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -33,38 +34,35 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     public UserDetailsService userDetailsService;
 
     @Autowired
-    private AuthenticationManager authenticationManager;
-
-    @Autowired
     private TokenStore jwtTokenStore;
 
     @Autowired
     private JwtAccessTokenConverter jwtAccessTokenConverter;
 
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
-                .withClient("order-client")
-                .secret(passwordEncoder.encode("order-secret-8888"))
+                .withClient("order")
+                .secret(passwordEncoder.encode("123123"))
                 .authorizedGrantTypes("refresh_token", "authorization_code", "password")
-                .accessTokenValiditySeconds(3600)
-                .scopes("all")
-                .and()
-                .withClient("user-client")
-                .secret(passwordEncoder.encode("user-secret-8888"))
-                .authorizedGrantTypes("refresh_token", "authorization_code", "password")
+                .redirectUris("http://www.baidu.com")
                 .accessTokenValiditySeconds(3600)
                 .scopes("all");
 
+
     }
+
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints.userDetailsService(userDetailsService)
                 .tokenStore(jwtTokenStore)
                 .accessTokenConverter(jwtAccessTokenConverter)
-                // password
+                .allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST)
                 .authenticationManager(authenticationManager);
 
     }
@@ -73,7 +71,7 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security.allowFormAuthenticationForClients();
         security.checkTokenAccess("isAuthenticated()");
-        security.tokenKeyAccess("isAuthenticated()");
+//        security.tokenKeyAccess("isAuthenticated()");
     }
 
 }

@@ -23,6 +23,7 @@ public class AliceUserDetailsService implements UserDetailsService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         // 查询数据库操作
         if (!username.equals("admin")) {
