@@ -1,0 +1,15 @@
+server:
+  port: 6001
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: mall-auth
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://120.79.185.138:8848
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yaml
