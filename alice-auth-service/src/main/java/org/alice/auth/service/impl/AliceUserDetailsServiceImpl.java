@@ -1,4 +1,4 @@
-package org.alice.auth.service;
+package org.alice.auth.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.configurers.provisioning.UserDetailsManagerConfigurer;
@@ -18,13 +18,16 @@ import java.util.List;
  * @Version: 1.0.0
  */
 @Component
-public class AliceUserDetailsService implements UserDetailsService {
+public class AliceUserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
+
+
         // 查询数据库操作
         if (!username.equals("admin")) {
             throw new UsernameNotFoundException("the user is not found");

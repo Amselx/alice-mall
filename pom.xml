@@ -19,6 +19,9 @@
     <modules>
         <module>alice-auth-service</module>
         <module>alice-mybatis-common</module>
+        <module>alice-data-common</module>
+        <module>alice-mybatis-generate</module>
+        <module>alice-ums-service</module>
     </modules>
 
     <properties>

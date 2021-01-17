@@ -1,6 +1,5 @@
 package org.alice;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,10 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version 1.0.0
  */
 @SpringBootApplication
-//@MapperScan("org.alice.*.mapper")
-public class AuthorizationApplication {
+public class UserManagerSystemApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AuthorizationApplication.class, args);
+        SpringApplication.run(UserManagerSystemApplication.class, args);
     }
 }

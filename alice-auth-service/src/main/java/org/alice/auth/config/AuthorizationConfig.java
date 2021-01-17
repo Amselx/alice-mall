@@ -16,6 +16,9 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+import org.springframework.stereotype.Controller;
+
+import javax.sql.DataSource;
 
 /**
  * @Author: Amse
@@ -29,7 +32,6 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
     public PasswordEncoder passwordEncoder;
 
-    //    @Qualifier("aliceUserDetailsService")
     @Autowired
     public UserDetailsService userDetailsService;
 
@@ -42,18 +44,12 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @Autowired
+    private DataSource  dataSource;
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.inMemory()
-                .withClient("order")
-                .secret(passwordEncoder.encode("123123"))
-                .authorizedGrantTypes("refresh_token", "authorization_code", "password")
-                .redirectUris("http://www.baidu.com")
-                .accessTokenValiditySeconds(3600)
-                .scopes("all");
-
-
+        clients.jdbc(dataSource);
     }
 
 

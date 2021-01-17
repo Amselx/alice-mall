@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @Configuration
 @EnableTransactionManagement
-public class MyBatisAutoConfiguration {
+public class MybatisAutoConfiguration {
 
     /**
      * 分页插件

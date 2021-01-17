@@ -1,0 +1,11 @@
+server:
+  port: 7001
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: mall-ums
+
+mybatis-plus:
+  mapper-locations: classpath*:org.alice.*.mapper
