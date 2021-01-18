@@ -1,7 +1,8 @@
-package org.alice;
+package org.alice.auth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @author Amse
@@ -9,9 +10,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version 1.0.0
  */
 @SpringBootApplication
-public class UserManagerSystemApplication {
+//@MapperScan("org.alice.*.mapper")
+@EnableFeignClients
+public class AuthorizationApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(UserManagerSystemApplication.class, args);
+        SpringApplication.run(AuthorizationApplication.class, args);
     }
 }

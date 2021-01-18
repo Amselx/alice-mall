@@ -2,7 +2,7 @@ package org.alice.ums.service.impl;
 
 import org.alice.ums.mapper.UmsAccountMapper;
 import org.alice.ums.service.UmsAccountService;
-import com.alice.entity.UmsAccount;
+import com.alice.data.entity.UmsAccount;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

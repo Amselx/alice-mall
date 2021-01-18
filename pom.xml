@@ -22,6 +22,7 @@
         <module>alice-data-common</module>
         <module>alice-mybatis-generate</module>
         <module>alice-ums-service</module>
+        <module>alice-gateway</module>
     </modules>
 
     <properties>

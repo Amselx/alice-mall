@@ -1,6 +1,6 @@
 package org.alice.ums.controller;
 
-import com.alice.entity.UmsAccount;
+import com.alice.data.entity.UmsAccount;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import org.alice.ums.service.UmsAccountService;

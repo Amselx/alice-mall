@@ -1,6 +1,6 @@
-package org.alice.api;
+package org.alice.auth.api;
 
-import com.alice.entity.UmsAccount;
+import com.alice.data.entity.UmsAccount;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

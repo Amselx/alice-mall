@@ -1,8 +1,8 @@
-package org.alice.config;
+package org.alice.mybatis.config;
 
 import com.baomidou.mybatisplus.core.config.GlobalConfig;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
-import org.alice.handler.MetaHandler;
+import org.alice.mybatis.handler.MetaHandler;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

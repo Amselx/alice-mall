@@ -47,7 +47,7 @@
 
 
 
-        <javaModelGenerator targetPackage="com.alice.entity" targetProject="alice-data-common/src/main/java"/>
+        <javaModelGenerator targetPackage="com.alice.data" targetProject="alice-data-common/src/main/java"/>
 
         <sqlMapGenerator targetPackage="org.alice.mall.mapper" targetProject="alice-data-common\src\main\resources"/>
 

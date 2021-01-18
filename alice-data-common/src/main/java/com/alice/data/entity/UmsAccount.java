@@ -1,4 +1,4 @@
-package com.alice.entity;
+package com.alice.data.entity;
 
 import java.io.Serializable;
 import java.util.Date;

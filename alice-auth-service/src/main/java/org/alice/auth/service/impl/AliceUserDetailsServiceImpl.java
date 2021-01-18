@@ -1,7 +1,7 @@
 package org.alice.auth.service.impl;
 
-import com.alice.entity.UmsAccount;
-import org.alice.api.UmsServiceApi;
+import com.alice.data.entity.UmsAccount;
+import org.alice.auth.api.UmsServiceApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;

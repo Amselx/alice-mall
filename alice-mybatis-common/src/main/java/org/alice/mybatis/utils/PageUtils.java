@@ -1,4 +1,4 @@
-package org.alice.utils;
+package org.alice.mybatis.utils;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 

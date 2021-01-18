@@ -1,6 +1,6 @@
 package org.alice.ums.service;
 
-import com.alice.entity.UmsAccount;
+import com.alice.data.entity.UmsAccount;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
