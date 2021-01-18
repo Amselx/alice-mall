@@ -22,7 +22,7 @@ public class UserController {
     @Autowired
     private UmsAccountService umsAccountService;
 
-    @GetMapping("/getAccount")
+    @GetMapping("/getAccount/{username}")
     public UmsAccount getAccountByUsername(@PathVariable("username") final String username) {
         LambdaQueryWrapper<UmsAccount> eq = Wrappers.<UmsAccount>lambdaQuery().eq(UmsAccount::getUsername, username);
         return umsAccountService.getOne(eq);
