@@ -6,3 +6,11 @@ spring:
     active: dev
   application:
     name: mall-gateway
+
+gateway:
+  dynamic-route:
+    data-id: gateway-route
+    group: gateway-group
+  skip-uri:
+    data-id: skip-uri
+    group: skip-group
