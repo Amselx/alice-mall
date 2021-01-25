@@ -4,11 +4,10 @@ import com.alibaba.cloud.nacos.NacosConfigManager;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.nacos.api.config.listener.Listener;
 import com.alibaba.nacos.api.exception.NacosException;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.alice.gateway.common.AliceGatewayProperties;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.gateway.event.RefreshRoutesEvent;
 import org.springframework.cloud.gateway.route.RouteDefinition;
 import org.springframework.cloud.gateway.route.RouteDefinitionRepository;
@@ -23,22 +22,18 @@ import java.util.List;
 import java.util.concurrent.Executor;
 
 /**
+ * The type Nacos route definition repository.
  *
- *
- * @author  Amse
- * @date  19/01/2021 17:33
+ * @author Amse
  * @version 1.0
+ * @date 19 /01/2021 17:33
  */
-@ConfigurationProperties("gateway.dynamic-route")
 @Component
 @Slf4j
 public class NacosRouteDefinitionRepository implements RouteDefinitionRepository {
 
-    @Setter
-    private String dataId = null;
-
-    @Setter
-    private String group = null;
+    @Autowired
+    private AliceGatewayProperties gatewayProperties;
 
     @Autowired
     private ApplicationEventPublisher publisher;
@@ -46,17 +41,20 @@ public class NacosRouteDefinitionRepository implements RouteDefinitionRepository
     @Autowired
     private NacosConfigManager nacosConfigManager;
 
+    /**
+     * Init.
+     */
     @PostConstruct
     public void init() {
-        if (dataId != null) {
-            addListener();
-        }
+        addListener();
     }
 
 
     private void addListener() {
         try {
-            nacosConfigManager.getConfigService().addListener(dataId, group, new Listener() {
+            nacosConfigManager.getConfigService().addListener(
+                    gatewayProperties.getRouteDataId(), gatewayProperties.getRouteGroup(),
+                    new Listener() {
                 @Override
                 public Executor getExecutor() {
                     return null;
@@ -79,7 +77,7 @@ public class NacosRouteDefinitionRepository implements RouteDefinitionRepository
     public Flux<RouteDefinition> getRouteDefinitions() {
         try {
             String content = nacosConfigManager.getConfigService()
-                    .getConfig(dataId, group,5000);
+                    .getConfig(gatewayProperties.getRouteDataId(), gatewayProperties.getRouteGroup(),5000);
             List<RouteDefinition> routeDefinitions = getListByStr(content);
             return Flux.fromIterable(routeDefinitions);
         } catch (NacosException e) {

@@ -1,0 +1,27 @@
+server:
+  port: 7001
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: mall-gateway
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://120.79.185.138:8848
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yaml
+
+gateway:
+  route-data-id: gateway-route
+  route-group: gateway-group
+
+  skip-uri-data-id: skip-uri
+  skip-uri-group: skip-group
+
+  auth-name: mall-gateway
+  auth-secret: $2a$10$.iTeVmARS02ymGDM5Z1WxedBj5BNMoIWkZQ5tkomIqo.4DPA361o6
+  auth-check-token-url: http://auth-server/oauth/check_token
