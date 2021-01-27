@@ -23,5 +23,5 @@ gateway:
   skip-uri-group: skip-group
 
   auth-name: mall-gateway
-  auth-secret: $2a$10$.iTeVmARS02ymGDM5Z1WxedBj5BNMoIWkZQ5tkomIqo.4DPA361o6
+  auth-secret: 123123
   auth-check-token-url: http://auth-server/oauth/check_token

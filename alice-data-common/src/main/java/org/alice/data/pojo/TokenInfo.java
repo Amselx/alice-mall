@@ -1,4 +1,4 @@
-package org.alice.gateway.common;
+package org.alice.data.pojo;
 
 import lombok.Data;
 

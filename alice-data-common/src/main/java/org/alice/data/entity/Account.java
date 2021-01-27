@@ -1,4 +1,4 @@
-package com.alice.data.entity;
+package org.alice.data.entity;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UmsAccount implements Serializable {
+public class Account implements Serializable {
     /**
      */
     private Long id;

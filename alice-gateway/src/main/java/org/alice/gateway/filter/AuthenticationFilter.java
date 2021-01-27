@@ -1,8 +1,8 @@
 package org.alice.gateway.filter;
 
 import lombok.extern.slf4j.Slf4j;
+import org.alice.data.pojo.TokenInfo;
 import org.alice.gateway.common.AliceGatewayProperties;
-import org.alice.gateway.common.TokenInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;

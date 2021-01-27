@@ -1,4 +1,4 @@
-package org.alice.ums;
+package org.alice.admin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version 1.0.0
  */
 @SpringBootApplication
-public class UserManagerSystemApplication {
+public class AdminManagerSystemApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(UserManagerSystemApplication.class, args);
+        SpringApplication.run(AdminManagerSystemApplication.class, args);
     }
 }

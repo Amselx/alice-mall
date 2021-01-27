@@ -9,6 +9,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.Executor;
 
@@ -27,7 +28,7 @@ public class SkipAuthenticationNacosManage implements InitializingBean {
     @Autowired
     private NacosConfigManager nacosConfigManager;
 
-    private static Set<String> shouldSkipUrl;
+    private static Set<String> shouldSkipUrl = new HashSet<>();
 
     @Override
     public void afterPropertiesSet() throws Exception {

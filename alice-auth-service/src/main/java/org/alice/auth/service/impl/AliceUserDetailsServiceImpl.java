@@ -1,6 +1,6 @@
 package org.alice.auth.service.impl;
 
-import com.alice.data.entity.UmsAccount;
+import org.alice.data.entity.Account;
 import org.alice.auth.api.UmsServiceApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -25,7 +25,7 @@ public class AliceUserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UmsAccount account = umsServiceApi.getAccount(username);
+        Account account = umsServiceApi.getAccount(username);
         if (account == null) {
             throw new UsernameNotFoundException("the user is not found");
         }

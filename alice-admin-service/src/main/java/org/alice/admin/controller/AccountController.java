@@ -1,9 +1,9 @@
-package org.alice.ums.controller;
+package org.alice.admin.controller;
 
-import com.alice.data.entity.UmsAccount;
+import org.alice.data.entity.Account;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import org.alice.ums.service.UmsAccountService;
+import org.alice.admin.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,16 +16,16 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2021/1/17
  */
 @RestController
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/account")
+public class AccountController {
 
     @Autowired
-    private UmsAccountService umsAccountService;
+    private AccountService accountService;
 
     @GetMapping("/getAccount/{username}")
-    public UmsAccount getAccountByUsername(@PathVariable("username") final String username) {
-        LambdaQueryWrapper<UmsAccount> eq = Wrappers.<UmsAccount>lambdaQuery().eq(UmsAccount::getUsername, username);
-        return umsAccountService.getOne(eq);
+    public Account getAccountByUsername(@PathVariable("username") final String username) {
+        LambdaQueryWrapper<Account> eq = Wrappers.<Account>lambdaQuery().eq(Account::getUsername, username);
+        return accountService.getOne(eq);
     }
 
 }

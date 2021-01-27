@@ -18,8 +18,8 @@ gateway:
   route-group: gateway-group
 
   skip-uri-data-id: skip-uri
-  skip-uri-group: skip-group
+  skip-uri-group: gateway-group
 
   auth-name: mall-gateway
-  auth-secret: $2a$10$.iTeVmARS02ymGDM5Z1WxedBj5BNMoIWkZQ5tkomIqo.4DPA361o6
-  auth-check-token-url: http://auth-server/oauth/check_token
+  auth-secret: 123123
+  auth-check-token-url: http://mall-auth/oauth/check_token

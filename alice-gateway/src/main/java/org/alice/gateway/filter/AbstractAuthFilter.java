@@ -24,7 +24,6 @@ public abstract class AbstractAuthFilter implements GlobalFilter {
         }
 
         return authFilter(exchange, chain);
-
     }
 
     /**

@@ -61,6 +61,7 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
                 .allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST)
                 .authenticationManager(authenticationManager);
 
+
     }
 
     @Override

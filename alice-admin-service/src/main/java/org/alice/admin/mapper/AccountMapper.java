@@ -1,6 +1,6 @@
-package org.alice.ums.mapper;
+package org.alice.admin.mapper;
 
-import com.alice.data.entity.UmsAccount;
+import org.alice.data.entity.Account;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -12,5 +12,5 @@ import org.apache.ibatis.annotations.Mapper;
  * @version 1.0
  */
 @Mapper
-public interface UmsAccountMapper extends BaseMapper<UmsAccount> {
+public interface AccountMapper extends BaseMapper<Account> {
 }
