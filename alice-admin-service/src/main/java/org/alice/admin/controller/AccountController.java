@@ -1,6 +1,6 @@
 package org.alice.admin.controller;
 
-import org.alice.data.entity.Account;
+import org.alice.data.entity.UmsAccount;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import org.alice.admin.service.AccountService;
@@ -23,8 +23,8 @@ public class AccountController {
     private AccountService accountService;
 
     @GetMapping("/getAccount/{username}")
-    public Account getAccountByUsername(@PathVariable("username") final String username) {
-        LambdaQueryWrapper<Account> eq = Wrappers.<Account>lambdaQuery().eq(Account::getUsername, username);
+    public UmsAccount getAccountByUsername(@PathVariable("username") final String username) {
+        LambdaQueryWrapper<UmsAccount> eq = Wrappers.<UmsAccount>lambdaQuery().eq(UmsAccount::getUsername, username);
         return accountService.getOne(eq);
     }
 

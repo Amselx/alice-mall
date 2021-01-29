@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version 1.0.0
  */
 @SpringBootApplication
-public class AdminManagerSystemApplication {
+public class AdminManageSystemApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AdminManagerSystemApplication.class, args);
+        SpringApplication.run(AdminManageSystemApplication.class, args);
     }
 }

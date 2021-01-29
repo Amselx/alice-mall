@@ -1,7 +1,8 @@
 package org.alice.auth.service.impl;
 
-import org.alice.data.entity.Account;
+import org.alice.data.entity.UmsAccount;
 import org.alice.auth.api.UmsServiceApi;
+import org.alice.data.pojo.ActionResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -25,13 +26,14 @@ public class AliceUserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Account account = umsServiceApi.getAccount(username);
-        if (account == null) {
+        ActionResult<UmsAccount> account = umsServiceApi.getAccount(username);
+        UmsAccount umsAccount = account.getData();
+        if (umsAccount == null) {
             throw new UsernameNotFoundException("the user is not found");
         }
         String role = "ROLE_ADMIN";
         List<SimpleGrantedAuthority> authorities = new ArrayList<SimpleGrantedAuthority>();
         authorities.add(new SimpleGrantedAuthority(role));
-        return new User(username, account.getPassword(), authorities);
+        return new User(username, umsAccount.getPassword(), authorities);
     }
 }

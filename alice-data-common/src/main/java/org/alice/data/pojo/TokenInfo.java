@@ -4,7 +4,6 @@ import lombok.Data;
 
 import java.util.Date;
 
-
 /**
  *
  *
@@ -28,5 +27,4 @@ public class TokenInfo {
 	private Date exp;
 	
 	private String[] authorities;
- 	
 }

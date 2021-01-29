@@ -21,8 +21,9 @@
         <module>alice-mybatis-common</module>
         <module>alice-data-common</module>
         <module>alice-mybatis-generate</module>
-        <module>alice-ums-service</module>
+        <module>alice-admin-service</module>
         <module>alice-gateway</module>
+        <module>alice-web-common</module>
     </modules>
 
     <properties>
@@ -40,12 +41,18 @@
         <seata.version>1.4.0</seata.version>
         <lombok.version>1.18.12</lombok.version>
         <fastjson.version>1.2.75</fastjson.version>
+        <hutool.version>5.5.7</hutool.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
         </dependency>
     </dependencies>
 
@@ -101,6 +108,8 @@
                 <artifactId>seata-spring-boot-starter</artifactId>
                 <version>${seata.version}</version>
             </dependency>
+
+
 
         </dependencies>
     </dependencyManagement>

@@ -9,22 +9,21 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>alice-ums-service</artifactId>
+    <artifactId>alice-admin-service</artifactId>
 
     <dependencies>
 
         <dependency>
             <groupId>org.alice</groupId>
             <artifactId>alice-mybatis-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.alice</groupId>
             <artifactId>alice-data-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
-
 
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -37,10 +36,10 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.alice</groupId>
+            <artifactId>alice-web-common</artifactId>
+            <version>${project.version}</version>
         </dependency>
-
 
     </dependencies>
 </project>

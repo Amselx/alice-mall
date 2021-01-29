@@ -1,6 +1,6 @@
 package org.alice.admin.service;
 
-import org.alice.data.entity.Account;
+import org.alice.data.entity.UmsAccount;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -10,5 +10,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @date    2021/1/16 23:55
  * @version 1.0
  */
-public interface AccountService extends IService<Account> {
+public interface AccountService extends IService<UmsAccount> {
 }

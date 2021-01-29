@@ -2,7 +2,7 @@ package org.alice.admin.service.impl;
 
 import org.alice.admin.mapper.AccountMapper;
 import org.alice.admin.service.AccountService;
-import org.alice.data.entity.Account;
+import org.alice.data.entity.UmsAccount;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * @date  2021/1/16
  */
 @Service
-public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> implements AccountService {
+public class AccountServiceImpl extends ServiceImpl<AccountMapper, UmsAccount> implements AccountService {
 /*
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

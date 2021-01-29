@@ -17,13 +17,13 @@
         <dependency>
             <groupId>org.alice</groupId>
             <artifactId>alice-mybatis-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.alice</groupId>
             <artifactId>alice-data-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>

@@ -15,6 +15,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * 
+ *
+ * @author  Amse
+ * @date  28/01/2021 11:35
+ * @version 1.0
+ */
 public class LombokPlugin extends PluginAdapter {
     @Override
     public boolean validate(List<String> list) {
@@ -32,14 +39,14 @@ public class LombokPlugin extends PluginAdapter {
         //添加domain的import
         topLevelClass.addImportedType("lombok.Data");
         topLevelClass.addImportedType("lombok.Builder");
-        topLevelClass.addImportedType("lombok.NoArgsConstructor");
-        topLevelClass.addImportedType("lombok.AllArgsConstructor");
+//        topLevelClass.addImportedType("lombok.NoArgsConstructor");
+//        topLevelClass.addImportedType("lombok.AllArgsConstructor");
 
         //添加domain的注解
         topLevelClass.addAnnotation("@Data");
         topLevelClass.addAnnotation("@Builder");
-        topLevelClass.addAnnotation("@NoArgsConstructor");
-        topLevelClass.addAnnotation("@AllArgsConstructor");
+//        topLevelClass.addAnnotation("@NoArgsConstructor");
+//        topLevelClass.addAnnotation("@AllArgsConstructor");
 
         //添加domain的注释
         topLevelClass.addJavaDocLine("/**");
